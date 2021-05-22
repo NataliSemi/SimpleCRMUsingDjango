@@ -47,7 +47,8 @@
             }
         },
          methods: {
-            submitForm() {
+            async submitForm() {
+                this.$store.commit('setIsLoading', true)
 
                 axios.defaults.headers.common['Authorization'] = ''
                 localStorage.removeItem('token')
@@ -58,7 +59,7 @@
                 }
 
 
-                axios
+                await axios
                     .post('/api/v1/token/login/', formData)
                     
                     .then(response => {
@@ -82,6 +83,8 @@
                             }
                             
                         })
+                        
+                    this.$store.commit('setIsLoading', false)
             }
          }
     }
