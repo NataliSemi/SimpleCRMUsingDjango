@@ -2,7 +2,7 @@
     <nav class="navbar is-dark">
         <div class="navbar-brand">
             <router-link to="/" class="navbar-item">
-                <strong>Ganar CRM</strong>
+                <strong>Nata CRM</strong>
             </router-link>
         </div>
  
