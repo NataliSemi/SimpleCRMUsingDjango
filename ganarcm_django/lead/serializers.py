@@ -6,4 +6,20 @@ from .models import Lead
 class LeadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lead
-        field = '__all__'
+        read_only_fields = (
+            'created_by',
+            'created_at',
+            'modified_at',
+        )
+        field = (
+            'id',
+            'company',
+            'contact_person',
+            'email',
+            'phone',
+            'website',
+            'confidence',
+            'estimated_value',
+            'status',
+            'priority',
+        )
