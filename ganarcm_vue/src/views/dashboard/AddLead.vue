@@ -127,6 +127,7 @@ import axios from 'axios'
                 const lead = {
                     company: this.company,
                     contact_person: this.contact_person,
+                    email: this.email,
                     phone: this.phone,
                     website: this.website,
                     estimated_value: this.estimated_value,
@@ -138,7 +139,7 @@ import axios from 'axios'
                 await axios
                 .post('/api/v1/leads/', lead)
                 .then(response => {
-                    console.log(reponse)
+                    console.log(response)
 
                     this.$router.push('/dashboard/leads')
                 })

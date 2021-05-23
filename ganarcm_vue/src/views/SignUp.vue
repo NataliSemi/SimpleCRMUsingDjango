@@ -62,6 +62,7 @@
         },
         methods: {
             async submitForm() {
+
                 this.errors = []
 
                 if(this.username === '') {
@@ -108,6 +109,7 @@
                             }
                             
                         })
+                        
                     this.$store.commit('setIsLoading', false)
                 }
             }

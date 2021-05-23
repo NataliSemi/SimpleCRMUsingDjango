@@ -2,8 +2,7 @@
   <div>
     <Navbar />
 
-    <div class="is-loading-bar has-text-centered" 
-    v-bind:class="{'is-loading': $store.state.isLoading }">
+    <div class="is-loading-bar has-text-centered" v-bind:class="{'is-loading': $store.state.isLoading }">
       <div class="lds-dual-ring"></div>
     </div>
 
@@ -26,7 +25,7 @@ export default {
       this.$store.commit('initializeStore')
 
       if(this.$store.state.token) {
-        axios.defaults.headers.common['Authorization'] = "Token " + this.$store.token
+        axios.defaults.headers.common['Authorization'] = "Token " + this.$store.state.token
       }
       else {
         axios.defaults.headers.common['Authorization'] = ""

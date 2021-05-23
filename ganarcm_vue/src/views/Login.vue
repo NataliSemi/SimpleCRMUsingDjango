@@ -2,8 +2,8 @@
     <div class="container">
         <div class="columns">
             <div class="column is-4 is-offset-4">
-                <h1 class='title'>Login In</h1>
-
+                <h1 class="title">Log in</h1>
+            
                 <form @submit.prevent="submitForm">
                     <div class="field">
                         <label>Email</label>
@@ -11,7 +11,7 @@
                             <input type="email" name="email" class="input" v-model="username">
                         </div>
                     </div>
-                    
+
                     <div class="field">
                         <label>Password</label>
                         <div class="control">
@@ -62,27 +62,25 @@
                 await axios
                     .post('/api/v1/token/login/', formData)
                     
+                await axios
+                    .post('/api/v1/token/login/', formData)
                     .then(response => {
                         const token = response.data.auth_token
-
                         this.$store.commit('setToken', token)
-
                         axios.defaults.headers.common['Authorization'] = 'Token ' + token
-
                         localStorage.setItem('token', token)
-
                         this.$router.push('/dashboard/my-account')
                     })
+
                     .catch(error => {
-                            if(error.response){
-                                for(const property in error.response.data){
-                                    this.errors.push(`${property}: ${error.response.data[property]}`)
-                                }
-                            } else if (error.message){
-                                this.errors.push(`Something went wrong. Please try again!`)
+                        if (error.response) {
+                            for (const property in error.response.data) {
+                                this.errors.push(`${property}: ${error.response.data[property]}`)
                             }
-                            
-                        })
+                        } else if (error.message) {
+                            this.errors.push('Something went wrong. Please try again!')
+                        }
+                    })
                         
                     this.$store.commit('setIsLoading', false)
             }

@@ -6,9 +6,7 @@
 
                 
                 <router-link 
-                    to="/dashboard/leads/add"
-                    v-if="$store.state.team.max_leads > num_leads"
-                >Add lead</router-link>
+                    to="/dashboard/leads/add">Add lead</router-link>
 
             <div class="column is-12">
                 <table class="table is-fullwidth">
@@ -55,7 +53,7 @@
         },
         methods: {
             async getLeads() {
-                this.$store.commit('isLoading', true)
+                this.$store.commit('setIsLoading', true)
 
                 axios
                     .get('/api/v1/leads/')
@@ -67,7 +65,7 @@
                     })
 
 
-                this.$store.commit('isLoading', false)
+                this.$store.commit('setIsLoading', false)
             }
         }
     }

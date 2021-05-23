@@ -74,9 +74,9 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if(to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated){
+  if (to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated) {
     next('/log-in')
-  }else {
+  } else {
     next()
   }
 })

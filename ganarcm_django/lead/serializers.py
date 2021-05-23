@@ -11,7 +11,7 @@ class LeadSerializer(serializers.ModelSerializer):
             'created_at',
             'modified_at',
         )
-        field = (
+        fields = (
             'id',
             'company',
             'contact_person',

@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'corsheaders',
+
     'lead.apps.LeadConfig',
 ]
 
