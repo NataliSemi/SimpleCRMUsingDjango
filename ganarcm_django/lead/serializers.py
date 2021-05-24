@@ -22,4 +22,6 @@ class LeadSerializer(serializers.ModelSerializer):
             'estimated_value',
             'status',
             'priority',
+            'created_at',
+            'modified_at',
         )

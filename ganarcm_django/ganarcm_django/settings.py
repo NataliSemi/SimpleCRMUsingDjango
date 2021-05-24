@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'lead.apps.LeadConfig',
+    'team.apps.TeamConfig',
 ]
 
 MIDDLEWARE = [
