@@ -22,6 +22,9 @@ export default {
       Navbar
     },
     beforeCreate() {
+
+      console.log(this.$store.state.team)
+
       this.$store.commit('initializeStore')
 
       if(this.$store.state.token) {

@@ -47,7 +47,7 @@ export default createStore({
       setUser(state, user) {
         state.user = user
       },
-      setTeam(self, team){
+      setTeam(state, team){
         state.team = team
 
         localStorage.setItem('team_id', team.id)
