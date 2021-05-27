@@ -26,4 +26,5 @@ class TeamSerializer(serializers.ModelSerializer):
             "id",
             "name",
             "members",
+            "created_by",
         )
