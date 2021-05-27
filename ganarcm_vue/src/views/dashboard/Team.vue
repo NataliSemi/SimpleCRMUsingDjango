@@ -4,9 +4,12 @@
             <div class="column is-12">
                 <h1 class="title">{{ team.name }}</h1>
 
-                <router-link :to="{'name': 'AddMember'}" class="button is-primary">
-                    Add Member
-                </router-link>
+                <template v-if="team.created_by.id === parseInt($store.state.user.id)">
+                    <router-link :to="{'name': 'AddMember'}" class="button is-primary">
+                        Add Member
+                    </router-link>
+                </template>
+
             </div>
 
             <div class="column is-12">
@@ -40,7 +43,8 @@ export default {
     data() {
         return {
             team: {
-                members: []
+                members: [],
+                created_by:{}
             }
         }
     },
